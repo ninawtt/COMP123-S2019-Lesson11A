@@ -6,8 +6,14 @@ using System.Windows.Forms;
 
 namespace COMP123_S2019_Lesson11A
 {
-    static class Program
+    public static class Program
     {
+        public static StartForm startForm;
+        public static MainForm mainForm;
+        public static AboutForm aboutForm;
+        public static Student student;
+        public static StudentInfoForm studentInfoForm;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +22,15 @@ namespace COMP123_S2019_Lesson11A
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            startForm = new StartForm();
+            mainForm = new MainForm();
+            aboutForm = new AboutForm();
+            studentInfoForm = new StudentInfoForm();
+
+            student = new Student();
+
+            Application.Run(startForm);
         }
     }
 }
