@@ -46,21 +46,23 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.StudentDataGridView = new System.Windows.Forms.DataGridView();
-            this.sectionADatabaseDataSet = new COMP123_S2019_Lesson11A.SectionADatabaseDataSet();
-            this.studentTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentTableTableAdapter = new COMP123_S2019_Lesson11A.SectionADatabaseDataSetTableAdapters.StudentTableTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sectionADatabaseDataSet = new COMP123_S2019_Lesson11A.SectionADatabaseDataSet();
+            this.studentTableTableAdapter = new COMP123_S2019_Lesson11A.SectionADatabaseDataSetTableAdapters.StudentTableTableAdapter();
             this.ShowDataButton = new System.Windows.Forms.Button();
             this.SelectionLabel = new System.Windows.Forms.Label();
             this.NextButton = new System.Windows.Forms.Button();
+            this.StudentSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.StudentOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.MainMenuStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StudentDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sectionADatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sectionADatabaseDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // MainMenuStrip
@@ -84,7 +86,7 @@
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(65, 35);
+            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(65, 38);
             this.fileToolStripMenuItem1.Text = "&File";
             // 
             // openToolStripMenuItem
@@ -95,6 +97,7 @@
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.openToolStripMenuItem.Size = new System.Drawing.Size(323, 38);
             this.openToolStripMenuItem.Text = "&Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // toolStripSeparator
             // 
@@ -128,13 +131,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(81, 35);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(81, 38);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(323, 38);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(203, 38);
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -161,6 +164,7 @@
             this.openToolStripButton.Name = "openToolStripButton";
             this.openToolStripButton.Size = new System.Drawing.Size(36, 36);
             this.openToolStripButton.Text = "&Open";
+            this.openToolStripButton.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripButton
             // 
@@ -218,20 +222,6 @@
             this.StudentDataGridView.TabIndex = 2;
             this.StudentDataGridView.SelectionChanged += new System.EventHandler(this.StudentDataGridView_SelectionChanged);
             // 
-            // sectionADatabaseDataSet
-            // 
-            this.sectionADatabaseDataSet.DataSetName = "SectionADatabaseDataSet";
-            this.sectionADatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentTableBindingSource
-            // 
-            this.studentTableBindingSource.DataMember = "StudentTable";
-            this.studentTableBindingSource.DataSource = this.sectionADatabaseDataSet;
-            // 
-            // studentTableTableAdapter
-            // 
-            this.studentTableTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -259,6 +249,20 @@
             this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
             this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
             this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studentTableBindingSource
+            // 
+            this.studentTableBindingSource.DataMember = "StudentTable";
+            this.studentTableBindingSource.DataSource = this.sectionADatabaseDataSet;
+            // 
+            // sectionADatabaseDataSet
+            // 
+            this.sectionADatabaseDataSet.DataSetName = "SectionADatabaseDataSet";
+            this.sectionADatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentTableTableAdapter
+            // 
+            this.studentTableTableAdapter.ClearBeforeFill = true;
             // 
             // ShowDataButton
             // 
@@ -290,6 +294,10 @@
             this.NextButton.UseVisualStyleBackColor = true;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
+            // StudentOpenFileDialog
+            // 
+            this.StudentOpenFileDialog.FileName = "openFileDialog1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(31F, 61F);
@@ -315,8 +323,8 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StudentDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sectionADatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sectionADatabaseDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,6 +358,8 @@
         private System.Windows.Forms.Button ShowDataButton;
         private System.Windows.Forms.Label SelectionLabel;
         private System.Windows.Forms.Button NextButton;
+        private System.Windows.Forms.SaveFileDialog StudentSaveFileDialog;
+        private System.Windows.Forms.OpenFileDialog StudentOpenFileDialog;
     }
 }
 
