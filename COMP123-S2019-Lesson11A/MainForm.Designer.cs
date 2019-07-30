@@ -33,8 +33,10 @@
             this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openBinaryFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveBinaryFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,12 +83,14 @@
             // 
             this.fileToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
+            this.openBinaryFileToolStripMenuItem,
             this.toolStripSeparator,
             this.saveToolStripMenuItem,
+            this.saveBinaryFileToolStripMenuItem,
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(65, 38);
+            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(65, 35);
             this.fileToolStripMenuItem1.Text = "&File";
             // 
             // openToolStripMenuItem
@@ -95,14 +99,22 @@
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(323, 38);
-            this.openToolStripMenuItem.Text = "&Open";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(404, 38);
+            this.openToolStripMenuItem.Text = "&Open (Text File)";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // openBinaryFileToolStripMenuItem
+            // 
+            this.openBinaryFileToolStripMenuItem.Name = "openBinaryFileToolStripMenuItem";
+            this.openBinaryFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
+            this.openBinaryFileToolStripMenuItem.Size = new System.Drawing.Size(404, 38);
+            this.openBinaryFileToolStripMenuItem.Text = "Open (&Binary File)";
+            this.openBinaryFileToolStripMenuItem.Click += new System.EventHandler(this.openBinaryFileToolStripMenuItem_Click);
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(320, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(401, 6);
             // 
             // saveToolStripMenuItem
             // 
@@ -110,19 +122,27 @@
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(323, 38);
-            this.saveToolStripMenuItem.Text = "&Save";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(404, 38);
+            this.saveToolStripMenuItem.Text = "&Save (Text File)";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // saveBinaryFileToolStripMenuItem
+            // 
+            this.saveBinaryFileToolStripMenuItem.Name = "saveBinaryFileToolStripMenuItem";
+            this.saveBinaryFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+            this.saveBinaryFileToolStripMenuItem.Size = new System.Drawing.Size(404, 38);
+            this.saveBinaryFileToolStripMenuItem.Text = "Save (B&inary File)";
+            this.saveBinaryFileToolStripMenuItem.Click += new System.EventHandler(this.saveBinaryFileToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(320, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(401, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(323, 38);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(404, 38);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -131,7 +151,7 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(81, 38);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(81, 35);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutToolStripMenuItem
@@ -360,6 +380,8 @@
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.SaveFileDialog StudentSaveFileDialog;
         private System.Windows.Forms.OpenFileDialog StudentOpenFileDialog;
+        private System.Windows.Forms.ToolStripMenuItem openBinaryFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveBinaryFileToolStripMenuItem;
     }
 }
 
